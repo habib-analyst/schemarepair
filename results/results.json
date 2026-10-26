@@ -1,0 +1,148 @@
+{
+ "corpus_size": 80,
+ "initial_validity": {
+  "valid_lax": 25,
+  "rate_lax": 0.3125,
+  "valid_strict": 12,
+  "rate_strict": 0.15,
+  "field_accuracy_of_valid": 0.942
+ },
+ "per_schema_validity": {
+  "person_record": {
+   "n": 10,
+   "valid": 4
+  },
+  "product_item": {
+   "n": 10,
+   "valid": 4
+  },
+  "appointment": {
+   "n": 10,
+   "valid": 3
+  },
+  "invoice": {
+   "n": 10,
+   "valid": 1
+  },
+  "sensor_reading": {
+   "n": 10,
+   "valid": 3
+  },
+  "book_record": {
+   "n": 10,
+   "valid": 3
+  },
+  "support_ticket": {
+   "n": 10,
+   "valid": 3
+  },
+  "geo_place": {
+   "n": 10,
+   "valid": 4
+  }
+ },
+ "per_variant_validity": {
+  "strict": {
+   "n": 40,
+   "valid": 24
+  },
+  "plain": {
+   "n": 40,
+   "valid": 1
+  }
+ },
+ "taxonomy_failures_only": {
+  "class_counts": {
+   "markdown_fence": 51,
+   "prose_wrapping": 51,
+   "extra_field": 12,
+   "missing_field": 11,
+   "type_mismatch": 4,
+   "truncated_json": 4,
+   "enum_violation": 2,
+   "constraint_violation": 1
+  },
+  "primary_counts": {
+   "markdown_fence": 47,
+   "truncated_json": 4,
+   "type_mismatch": 3,
+   "missing_field": 1
+  }
+ },
+ "strategies": {
+  "local_repair": {
+   "attempted": 55,
+   "fixed": 33,
+   "fix_rate": 0.6,
+   "end_to_end_validity": 0.725,
+   "model_calls_total": 0,
+   "mean_calls_per_failure": 0.0,
+   "tokens_total": 0,
+   "mean_tokens_per_failure": 0.0,
+   "tokens_per_fix": 0.0,
+   "wall_s_total": 0.0,
+   "field_accuracy_fixed": 0.9192
+  },
+  "field_patch": {
+   "attempted": 55,
+   "fixed": 47,
+   "fix_rate": 0.8545,
+   "end_to_end_validity": 0.9,
+   "model_calls_total": 32,
+   "mean_calls_per_failure": 0.582,
+   "tokens_total": 7798,
+   "mean_tokens_per_failure": 141.8,
+   "tokens_per_fix": 165.9,
+   "wall_s_total": 453.2,
+   "field_accuracy_fixed": 0.9301
+  },
+  "ladder": {
+   "attempted": 55,
+   "fixed": 47,
+   "fix_rate": 0.8545,
+   "end_to_end_validity": 0.9,
+   "model_calls_total": 32,
+   "mean_calls_per_failure": 0.582,
+   "tokens_total": 7798,
+   "mean_tokens_per_failure": 141.8,
+   "tokens_per_fix": 165.9,
+   "wall_s_total": 382.9,
+   "field_accuracy_fixed": 0.9301
+  },
+  "feedback_retry": {
+   "attempted": 55,
+   "fixed": 2,
+   "fix_rate": 0.0364,
+   "end_to_end_validity": 0.3375,
+   "model_calls_total": 108,
+   "mean_calls_per_failure": 1.964,
+   "tokens_total": 59256,
+   "mean_tokens_per_failure": 1077.4,
+   "tokens_per_fix": 29628.0,
+   "wall_s_total": 2408.7,
+   "field_accuracy_fixed": 0.875
+  },
+  "naive_retry": {
+   "attempted": 55,
+   "fixed": 13,
+   "fix_rate": 0.2364,
+   "end_to_end_validity": 0.475,
+   "model_calls_total": 102,
+   "mean_calls_per_failure": 1.855,
+   "tokens_total": 43078,
+   "mean_tokens_per_failure": 783.2,
+   "tokens_per_fix": 3313.7,
+   "wall_s_total": 2653.3,
+   "field_accuracy_fixed": 0.9462
+  }
+ },
+ "complete": true,
+ "meta": {
+  "model_dir": "local transformers dir (Qwen2.5-0.5B-Instruct)",
+  "per_schema": 10,
+  "max_calls_budget_per_strategy": 2,
+  "temperature": 0.8,
+  "driver": "run_strategies.py (cost-ascending order; identical seeds to benchmark.run_benchmark)",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct"
+ }
+}

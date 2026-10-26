@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schemarepair"
+version = "0.1.0"
+description = "Structured-output agent with schema enforcement and a benchmark of repair strategies (naive retry, feedback retry, deterministic local repair, field-level patching) measured on real malformed LLM outputs."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Habib Ur Rehman" }]
+keywords = ["llm", "structured-output", "pydantic", "json-repair", "agents", "benchmark"]
+dependencies = ["pydantic>=2"]
+
+[project.optional-dependencies]
+llm = ["transformers>=4.44", "torch>=2"]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
